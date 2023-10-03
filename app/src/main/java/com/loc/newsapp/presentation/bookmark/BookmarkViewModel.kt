@@ -27,4 +27,4 @@ class BookmarkViewModel @Inject constructor(
             _state.value = _state.value.copy(articles = it.asReversed())
         }.launchIn(viewModelScope)
     }
-}`
+}
