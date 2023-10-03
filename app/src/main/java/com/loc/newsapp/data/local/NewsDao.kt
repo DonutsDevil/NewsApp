@@ -14,6 +14,9 @@ interface NewsDao {
     suspend fun delete(article: Article)
 
     @Query("SELECT * FROM Article")
-    fun getArticle(): Flow<List<Article>>
+    fun getArticles(): Flow<List<Article>>
+
+    @Query("SELECT * FROM Article where url=:url")
+    suspend fun getArticle(url: String): Article?
 
 }
